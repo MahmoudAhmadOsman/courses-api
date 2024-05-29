@@ -1,4 +1,4 @@
-//create mongoose model
+//1. create mongoose model
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
