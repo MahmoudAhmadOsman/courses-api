@@ -1,5 +1,3 @@
-## MERN STACK APPLICATION
-
 # RESTful API Course
 
 This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, Delete) functionalities. The API allows users to manage a list of courses through various endpoints.
