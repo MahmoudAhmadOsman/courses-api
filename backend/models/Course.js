@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const CourseSchema = new Schema(
+const courseSchema = new Schema(
   {
     title: { type: String, unique: true, lowercase: true, trim: true }
   },
@@ -12,5 +12,4 @@ const CourseSchema = new Schema(
 );
 
 // Create the Course model and export it
-const Course = mongoose.model("Course", CourseSchema);
-exports.Course = Course;
+module.exports = mongoose.model("Course", courseSchema);

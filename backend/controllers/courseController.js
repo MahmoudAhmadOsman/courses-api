@@ -6,13 +6,16 @@ const Course = require('../models/Course');
 
 //@ GET ALL COURSES
 
-const getAllCourses = (req, res) =>{
+const getAllCourses = async (req, res) =>{
 
-    res.status(200).json({
-        success: true,
-        message: 'Get all courses'
-    })
+    //Send all courses to client
+    const courses = await Course.find().sort({createdAt: -1});
+    res.status(200).json(courses);
+    
 }
+
+
+ 
 
 
 
