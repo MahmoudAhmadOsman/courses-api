@@ -8,10 +8,16 @@ const Course = require('../models/Course');
 
 const getAllCourses = async (req, res) =>{
 
-    //Send all courses to client
-    const courses = await Course.find().sort({createdAt: -1});
-    res.status(200).json(courses);
-    
+    //use try catch to handle errors
+    try{
+        const courses = await Course
+        .find()
+        .sort({createdAt: -1});
+        res.status(200).json(courses);//Send all courses to client
+
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }    
 }
 
 
