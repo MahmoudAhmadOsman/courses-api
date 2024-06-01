@@ -8,7 +8,19 @@ const courseSchema = new Schema(
       type: String,
       unique: true,
       trim: true,
-      required: true
+      required: [true, "Course title is required!"]
+    },
+    description: {
+      type: String,
+      unique: true,
+      trim: true,
+      required: [true, "Course description is required!"]
+    },
+    price: {
+      type: Number,
+      unique: true,
+      trim: true,
+      required: [true, "Course price is required!"]
     }
   },
   {

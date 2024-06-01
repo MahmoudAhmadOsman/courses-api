@@ -5,14 +5,14 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 ## Base URL
 
 ```
-http://localhost:5000/api/courses
+http://localhost:5000/api/courses/list
 ```
 
 ## Endpoints
 
 ### Get All Courses
 
-- **URL:** `/`
+- **URL:** `http://localhost:5000/api/courses/list`
 - **Method:** `GET`
 - **Description:** Retrieves a list of all courses.
 - **Response Example:**
@@ -35,7 +35,7 @@ http://localhost:5000/api/courses
 
 ### Get Course by ID
 
-- **URL:** `/:id`
+- **URL:** `http://localhost:5000/api/courses/list/:id`
 - **Method:** `GET`
 - **Description:** Retrieves a single course by its ID.
 - **Response Example:**
@@ -50,7 +50,7 @@ http://localhost:5000/api/courses
 
 ### Create a New Course
 
-- **URL:** `/`
+- **URL:** `http://localhost:5000/api/courses/create`
 - **Method:** `POST`
 - **Description:** Creates a new course.
 - **Request Body Example:**
@@ -76,7 +76,7 @@ http://localhost:5000/api/courses
 
 ### Update a Course
 
-- **URL:** `/:id`
+- **URL:** `http://localhost:5000/api/courses/list/update/:id`
 - **Method:** `PUT`
 - **Description:** Updates an existing course by its ID.
 - **Request Body Example:**
@@ -102,7 +102,7 @@ http://localhost:5000/api/courses
 
 ### Delete a Course
 
-- **URL:** `/:id`
+- **URL:** `http://localhost:5000/api/courses/list/update/:id`
 - **Method:** `DELETE`
 - **Description:** Deletes a course by its ID.
 - **Response Example:**
@@ -131,7 +131,7 @@ http://localhost:5000/api/courses
    ```
 
 4. **Access the API:**
-   Open your browser or use a tool like Postman to navigate to `http://localhost:5000/api/courses`.
+   Open your browser or use a tool like Postman to navigate to `http://localhost:5000/api/courses/list`.
 
 ## License
 
