@@ -16,12 +16,15 @@ const createCourse = async (req, res) => {
   //9. Handle cancellation
   //10. Handle completion
 
-  const { title } = req.body;
-  console.log(title);
+  const { title, description, credit, price } = req.body;
+  console.log("Course Details: ", req.body);
 
   try {
     const course = await Course.create({
-      title
+      title,
+      description,
+      credit,
+      price
     });
     res.status(200).json(course);
   } catch (error) {

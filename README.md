@@ -20,15 +20,23 @@ http://localhost:5000/api/courses/list
   [
     {
       "id": 1,
-      "title": "Introduction to Programming",
-      "description": "Learn the basics of programming.",
-      "instructor": "John Doe"
+      "title": "Groovy & Grails",
+      "description": "Groovy course description.",
+       "instructor":"John Smith",
+      "credit": 4,
+      "price": 1546,
+      "createdAt": "2024-06-01T23:31:35.096Z",
+      "updatedAt": "2024-06-01T23:31:35.096Z",
     },
     {
       "id": 2,
-      "title": "Advanced Data Structures",
-      "description": "Deep dive into data structures.",
-      "instructor": "Jane Smith"
+     "title": "Introduction to Java",
+      "description": "Introduction to Java course description.",
+      "instructor":"John Doe",
+      "credit": 4,
+      "price": 1546,
+      "createdAt": "2024-06-01T23:31:35.096Z",
+      "updatedAt": "2024-06-01T23:31:35.096Z"
     }
   ]
   ```
@@ -42,9 +50,13 @@ http://localhost:5000/api/courses/list
   ```json
   {
     "id": 1,
-    "title": "Introduction to Programming",
-    "description": "Learn the basics of programming.",
-    "instructor": "John Doe"
+    "title": "Groovy & Grails",
+    "description": "Groovy course description.",
+      "instructor":"John Smith",
+    "credit": 4,
+    "price": 1546,
+    "createdAt": "2024-06-01T23:31:35.096Z",
+    "updatedAt": "2024-06-01T23:31:35.096Z",
   }
   ```
 
@@ -56,9 +68,11 @@ http://localhost:5000/api/courses/list
 - **Request Body Example:**
   ```json
   {
-    "title": "Introduction to Programming",
-    "description": "Learn the basics of programming.",
-    "instructor": "John Doe"
+      "title": "Groovy & Grails",
+      "description": "Groovy course description.",
+       "instructor":"John Smith",
+      "credit": 4,
+      "price": 1546,
   }
   ```
 - **Response Example:**
@@ -66,10 +80,14 @@ http://localhost:5000/api/courses/list
   {
     "message": "Course created successfully",
     "course": {
-      "id": 3,
-      "title": "Introduction to Programming",
-      "description": "Learn the basics of programming.",
-      "instructor": "John Doe"
+      "_id": "665baf575dcd6c2ffe3ca85f",
+        "title": "Groovy & Grails",
+        "description": "Groovy course description",
+        "credit": 4,
+        "price": 1546,
+        "createdAt": "2024-06-01T23:31:35.096Z",
+        "updatedAt": "2024-06-01T23:31:35.096Z",
+        "__v": 0
     }
   }
   ```
@@ -82,9 +100,10 @@ http://localhost:5000/api/courses/list
 - **Request Body Example:**
   ```json
   {
-    "title": "Introduction to Programming",
-    "description": "Updated course description.",
-    "instructor": "John Doe"
+       "title": "Groovy & Grails",
+        "description": "Groovy course description",
+        "credit": 4,
+        "price": 1546,
   }
   ```
 - **Response Example:**
@@ -95,7 +114,9 @@ http://localhost:5000/api/courses/list
       "id": 1,
       "title": "Introduction to Programming",
       "description": "Updated course description.",
-      "instructor": "John Doe"
+      "credit": 4,
+        "price": 1546,
+      "instructor": "John Davis"
     }
   }
   ```

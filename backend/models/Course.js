@@ -10,11 +10,21 @@ const courseSchema = new Schema(
       trim: true,
       required: [true, "Course title is required!"]
     },
+    instructor: {
+      type: String,
+      trim: true,
+      required: [true, "Instructor name is required!"]
+    },
     description: {
       type: String,
       unique: true,
       trim: true,
       required: [true, "Course description is required!"]
+    },
+    credit: {
+      type: Number,
+      trim: true,
+      required: [true, "Course credit is required!"]
     },
     price: {
       type: Number,
