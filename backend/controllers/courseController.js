@@ -42,25 +42,72 @@ const getAllCourses = async (req, res) => {
   }
 };
 
-//@ GET A COURSE
-const geCourse = (req, res) => {
-  res.send("Get a course");
+//@ GET A COURSE BY ID
+const getCourseById = async (req, res) => {
+  //get course by its id
+  const { id } = req.params;
+  // check if id is valid or not
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res
+      .status(404)
+      .json({ error: `There is no such course with this id:! ${id}` });
+  }
+  const course = await Course.findById(id);
+  if (!course) {
+    return res.status(404).json({ error: "There is no such course!" });
+  }
+  res.status(200).json(course);
 };
 
 //@ UPDATE A COURSE
 
-const updateCourse = (req, res) => {
-  res.send("Update a course");
+const updateCourse = async (req, res) => {
+  // console.log("update course");
+  const { id } = req.params;
+  //check if there is an id
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res
+      .status(404)
+      .json({ error: `There is no such course with this id:! ${id}` });
+  }
+  const course = await Course.findByIdAndUpdate(
+    { _id: id },
+    {
+      ...req.body
+    },
+    { new: true }
+  );
+  if (!course) {
+    return res
+      .status(404)
+      .json({ error: `There is no such course with this id:! ${id}` });
+  }
+  res.status(200).json(course);
 };
 
 //@ DELETE A COURSE
-const deleteCourse = (req, res) => {
-  res.send("Delete a course");
+const deleteCourse = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res
+      .status(400)
+      .json({ error: `There is no such course with this id:! ${id}` });
+  }
+
+  // const course = await Course.findOneAndDelete({ _id: id });
+  const course = await Course.deleteOne({ _id: id });
+
+  if (!course) {
+    return res.status(400).json({ error: "No such course!" });
+  }
+  res.status(200).json("Course has been deleted!");
+  res.status(200).json(course);
 };
 
 module.exports = {
   getAllCourses,
-  geCourse,
+  getCourseById,
   createCourse,
   updateCourse,
   deleteCourse

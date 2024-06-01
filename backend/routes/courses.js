@@ -1,10 +1,13 @@
 const express = require("express");
 
-//1.  get all course controller routes one by one
+//1.  Get all course controller routes one by one
 
 const {
   getAllCourses,
-  createCourse
+  createCourse,
+  getCourseById,
+  updateCourse,
+  deleteCourse
 } = require("../controllers/courseController");
 
 //2. create a router
@@ -13,12 +16,19 @@ const router = express.Router();
 
 //3.use the router
 
-//1. Get All courses route
+//@ GET ALL COURSES
 router.get("/list", getAllCourses);
 
-//create new course route
+//@ CREATE A COURSE
 router.post("/create", createCourse);
 
-//4. use this router in index.js
+//@GET A COURSE BY ID
+router.get("/list/:id", getCourseById);
 
-module.exports = router;
+//@UPDATE COURSE
+router.put("/list/update/:id", updateCourse);
+
+//@DELETE COURSE
+router.delete("/list/delete/:id", deleteCourse);
+
+module.exports = router; //4. use this router in index.js
