@@ -7,7 +7,6 @@ const courseSchema = new Schema(
     title: {
       type: String,
       unique: true,
-      lowercase: true,
       trim: true,
       required: true
     }
