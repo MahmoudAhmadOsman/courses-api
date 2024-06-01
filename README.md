@@ -122,12 +122,12 @@ http://localhost:5000/api/courses
 
 2. **Install dependencies:**
    ```sh
-   pip install -r requirements.txt
+        npm install
    ```
 
 3. **Run the application:**
    ```sh
-   python app.py
+        npm run dev
    ```
 
 4. **Access the API:**

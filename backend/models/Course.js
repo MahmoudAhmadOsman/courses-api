@@ -4,7 +4,13 @@ const Schema = mongoose.Schema;
 
 const courseSchema = new Schema(
   {
-    title: { type: String, unique: true, lowercase: true, trim: true }
+    title: {
+      type: String,
+      unique: true,
+      lowercase: true,
+      trim: true,
+      required: true
+    }
   },
   {
     timestamps: true
