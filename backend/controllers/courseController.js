@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+const asyncHandler = require("express-async-handler");
 const Course = require("../models/Course");
 
 //@ CREATE A COURSE
-const createCourse = async (req, res) => {
+const createCourse = asyncHandler(async (req, res) => {
   //steps to create a course
   //1. Get the data from the request body
 
@@ -16,12 +17,13 @@ const createCourse = async (req, res) => {
   //9. Handle cancellation
   //10. Handle completion
 
-  const { title, description, credit, price } = req.body;
+  const { title, instructor, description, credit, price } = req.body;
   console.log("Course Details: ", req.body);
 
   try {
     const course = await Course.create({
       title,
+      instructor,
       description,
       credit,
       price
@@ -31,11 +33,11 @@ const createCourse = async (req, res) => {
     res.status(400).json({ error: error.message });
     console.log(error);
   }
-};
+});
 
 //@ GET ALL COURSES
 
-const getAllCourses = async (req, res) => {
+const getAllCourses = asyncHandler(async (req, res) => {
   //use try catch to handle errors
   try {
     const courses = await Course.find().sort({ createdAt: -1 });
@@ -43,10 +45,10 @@ const getAllCourses = async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-};
+});
 
 //@ GET A COURSE BY ID
-const getCourseById = async (req, res) => {
+const getCourseById = asyncHandler(async (req, res) => {
   //get course by its id
   const { id } = req.params;
   // check if id is valid or not
@@ -60,11 +62,11 @@ const getCourseById = async (req, res) => {
     return res.status(404).json({ error: "There is no such course!" });
   }
   res.status(200).json(course);
-};
+});
 
 //@ UPDATE A COURSE
 
-const updateCourse = async (req, res) => {
+const updateCourse = asyncHandler(async (req, res) => {
   // console.log("update course");
   const { id } = req.params;
   //check if there is an id
@@ -86,10 +88,10 @@ const updateCourse = async (req, res) => {
       .json({ error: `There is no such course with this id:! ${id}` });
   }
   res.status(200).json(course);
-};
+});
 
 //@ DELETE A COURSE
-const deleteCourse = async (req, res) => {
+const deleteCourse = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -106,7 +108,7 @@ const deleteCourse = async (req, res) => {
   }
   res.status(200).json("Course has been deleted!");
   res.status(200).json(course);
-};
+});
 
 module.exports = {
   getAllCourses,
