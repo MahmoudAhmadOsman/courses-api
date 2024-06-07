@@ -1,22 +1,9 @@
 const mongoose = require("mongoose");
 const asyncHandler = require("express-async-handler");
-const Course = require("../models/Course");
+const Course = require("../models/CourseModal");
 
 //@ CREATE A COURSE
 const createCourse = asyncHandler(async (req, res) => {
-  //steps to create a course
-  //1. Get the data from the request body
-
-  //2. Create a new course instance
-  //3. Save the course instance to the database
-  //4. Send a response to the client
-  //5. Handle errors
-  //6. Handle success
-  //7. Handle failure
-  //8. Handle completion
-  //9. Handle cancellation
-  //10. Handle completion
-
   const { title, instructor, description, credit, price } = req.body;
   console.log("Course Details: ", req.body);
 

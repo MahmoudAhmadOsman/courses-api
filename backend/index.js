@@ -2,6 +2,7 @@ require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
+const userRoute = require("./routes/users");
 const courseRoute = require("./routes/courses");
 
 //express app
@@ -18,8 +19,10 @@ app.use((req, res, next) => {
   next();
 });
 
-//Step 5 in the courses route, register all routes
+//Users route
+app.use("/api/users", userRoute);
 
+//Step 5 in the courses route, register all routes
 app.use("/api/courses", courseRoute);
 
 //Listen Port
