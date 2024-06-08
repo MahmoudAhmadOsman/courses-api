@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const asyncHandler = require("express-async-handler");
-const Course = require("../models/CourseModal");
 
+const Course = require("../models/CourseModel");
 //@INSERT MANY COURSES AT ONCE
 const seedCourses = asyncHandler(async (req, res) => {
   try {

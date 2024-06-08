@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const asyncHandler = require("express-async-handler");
-
 const jwt = require("jsonwebtoken");
-const User = require("../models/UserModal");
+const User = require("../models/UserModel");
 
 //user token
 const createToken = _id => {

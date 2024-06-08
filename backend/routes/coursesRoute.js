@@ -1,7 +1,4 @@
 const express = require("express");
-
-//1.  Get all course controller routes one by one
-
 const {
   getAllCourses,
   createCourse,
