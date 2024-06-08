@@ -5,10 +5,12 @@ const Course = require("../models/CourseModel");
 //@INSERT MANY COURSES AT ONCE
 const seedCourses = asyncHandler(async (req, res) => {
   try {
+    const user_id = req.user_.id;
     const createdCourses = await Course.insertMany(req.body);
     res.status(200).json({
       message: "Courses seeded successfully!",
-      courses: createdCourses
+      courses: createdCourses,
+      user_id
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -17,8 +19,11 @@ const seedCourses = asyncHandler(async (req, res) => {
 
 //@ CREATE A COURSE
 const createCourse = asyncHandler(async (req, res) => {
+  // Insert the user details into the database
+  const user_id = req.user._id;
+
   const { title, instructor, description, credit, price } = req.body;
-  console.log("Course Details: ", req.body);
+  // console.log("Course Details: ", req.body);
 
   try {
     const course = await Course.create({
@@ -26,11 +31,19 @@ const createCourse = asyncHandler(async (req, res) => {
       instructor,
       description,
       credit,
-      price
+      price,
+      user_id
     });
-    res.status(200).json(course);
+    res.status(200).json({
+      message: "New course created successfully!",
+      course
+    });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({
+      messageError: "Error creating course",
+
+      error: error.message
+    });
     console.log(error);
   }
 });

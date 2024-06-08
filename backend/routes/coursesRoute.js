@@ -13,7 +13,10 @@ const requireAuth = require("../middleware/requireAuth");
 
 const router = express.Router();
 
-//=== REQUIRE AUTH USING use() middle
+//@SEED COURSES
+router.post("/seed", seedCourses);
+
+//=== REQUIRe AUTH USING use() middle
 router.use(requireAuth);
 
 //3.use the router
@@ -37,6 +40,6 @@ router.delete("/list/delete/:id", deleteCourse);
 router.delete("/deleteAll", deleteCourse);
 
 //@SEED COURSES
-router.post("/seed", seedCourses);
+// router.post("/seed", seedCourses);
 
 module.exports = router; //4. use this router in index.js
