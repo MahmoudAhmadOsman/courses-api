@@ -7,7 +7,8 @@ const {
   createCourse,
   getCourseById,
   updateCourse,
-  deleteCourse
+  deleteCourse,
+  seedCourses
 } = require("../controllers/courseController");
 
 //2. create a router
@@ -33,5 +34,8 @@ router.delete("/list/delete/:id", deleteCourse);
 
 //@DELLE ALL COURSES
 router.delete("/deleteAll", deleteCourse);
+
+//@SEED COURSES
+router.post("/seed", seedCourses);
 
 module.exports = router; //4. use this router in index.js
