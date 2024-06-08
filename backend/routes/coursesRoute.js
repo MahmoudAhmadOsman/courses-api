@@ -31,4 +31,7 @@ router.put("/list/update/:id", updateCourse);
 //@DELETE COURSE
 router.delete("/list/delete/:id", deleteCourse);
 
+//@DELLE ALL COURSES
+router.delete("/deleteAll", deleteCourse);
+
 module.exports = router; //4. use this router in index.js

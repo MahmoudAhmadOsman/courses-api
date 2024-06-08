@@ -97,10 +97,25 @@ const deleteCourse = asyncHandler(async (req, res) => {
   res.status(200).json(course);
 });
 
+//Delete All Courses route
+
+const deleteAllCourses = asyncHandler(async (req, res) => {
+  res.send("Delete All Courses Route");
+  try {
+    await Course.deleteMany({});
+    res.status(200).send({ message: "All courses have been deleted!" });
+  } catch (error) {
+    res
+      .status(500)
+      .send({ error: "An error occurred while deleting courses!" });
+  }
+});
+
 module.exports = {
   getAllCourses,
   getCourseById,
   createCourse,
   updateCourse,
-  deleteCourse
+  deleteCourse,
+  deleteAllCourses
 };
