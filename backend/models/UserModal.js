@@ -40,10 +40,14 @@ const userSchema = new Schema(
 // validate user input
 function validateUserInput(firstName, lastName, email, password) {
   if (validator.isEmpty(firstName)) {
+    console.log(firstName);
     throw new Error("First name is required!");
   }
   if (validator.isEmpty(lastName)) {
     throw new Error("Last name is required!");
+  }
+  if (validator.isEmail(email)) {
+    throw new Error("Please enter valid email address!");
   }
   if (validator.isEmpty(email)) {
     throw new Error("Email address is required!");

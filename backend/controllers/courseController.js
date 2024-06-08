@@ -6,7 +6,6 @@ const Course = require("../models/CourseModal");
 const seedCourses = asyncHandler(async (req, res) => {
   try {
     const createdCourses = await Course.insertMany(req.body);
-    // res.status(200).json(createdCourses);
     res.status(200).json({
       message: "Courses seeded successfully!",
       courses: createdCourses
@@ -83,7 +82,10 @@ const updateCourse = asyncHandler(async (req, res) => {
       .status(404)
       .json({ error: `There is no such course with this id:! ${id}` });
   }
-  res.status(200).json(course);
+  res.status(200).json({
+    message: "Courses updated successfully!",
+    course
+  });
 });
 
 //@ DELETE A COURSE
@@ -101,8 +103,10 @@ const deleteCourse = asyncHandler(async (req, res) => {
   if (!course) {
     return res.status(400).json({ error: "No such course!" });
   }
-  res.status(200).json("Course has been deleted!");
-  res.status(200).json(course);
+  res.status(200).json({
+    message: `Course with an id of - [ ${id} ] - has been deleted!`
+    // course
+  });
 });
 
 //Delete All Courses route

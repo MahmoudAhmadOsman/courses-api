@@ -10,10 +10,14 @@ const {
   deleteCourse,
   seedCourses
 } = require("../controllers/courseController");
+const requireAuth = require("../middleware/requireAuth");
 
 //2. create a router
 
 const router = express.Router();
+
+//=== REQUIRE AUTH USING use() middle
+router.use(requireAuth);
 
 //3.use the router
 
