@@ -12,7 +12,7 @@ http://localhost:5000/api/courses/list
 
 ### Get All Courses
 
-- **URL:** `http://localhost:5000/api/courses/list`
+- **URL:** `https://courses-api-j67q.onrender.com/api/courses/list`
 - **Method:** `GET`
 - **Description:** Retrieves a list of all courses.
 - **Response Example:**
@@ -43,7 +43,7 @@ http://localhost:5000/api/courses/list
 
 ### Get Course by ID
 
-- **URL:** `http://localhost:5000/api/courses/list/:id`
+- **URL:** `https://courses-api-j67q.onrender.com/api/courses/list/:id`
 - **Method:** `GET`
 - **Description:** Retrieves a single course by its ID.
 - **Response Example:**
@@ -62,7 +62,7 @@ http://localhost:5000/api/courses/list
 
 ### Create a New Course
 
-- **URL:** `http://localhost:5000/api/courses/create`
+- **URL:** `https://courses-api-j67q.onrender.com/api/courses/create`
 - **Method:** `POST`
 - **Description:** Creates a new course.
 - **Request Body Example:**
@@ -94,7 +94,7 @@ http://localhost:5000/api/courses/list
 
 ### Update a Course
 
-- **URL:** `http://localhost:5000/api/courses/list/update/:id`
+- **URL:** `https://courses-api-j67q.onrender.com/api/courses/list/update/:id`
 - **Method:** `PUT`
 - **Description:** Updates an existing course by its ID.
 - **Request Body Example:**
@@ -123,7 +123,7 @@ http://localhost:5000/api/courses/list
 
 ### Delete a Course
 
-- **URL:** `http://localhost:5000/api/courses/list/update/:id`
+- **URL:** `https://courses-api-j67q.onrender.com/api/courses/delete/:id`
 - **Method:** `DELETE`
 - **Description:** Deletes a course by its ID.
 - **Response Example:**
@@ -152,7 +152,7 @@ http://localhost:5000/api/courses/list
    ```
 
 4. **Access the API:**
-   Open your browser or use a tool like Postman to navigate to `http://localhost:5000/api/courses/list`.
+   Open your browser or use a tool like Postman to navigate to `https://courses-api-j67q.onrender.com/api/courses/list`.
 
 ## License
 
