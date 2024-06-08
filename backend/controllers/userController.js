@@ -28,6 +28,13 @@ const signupUser = async (req, res) => {
   }
 };
 
+//get all users
+const getAllUsers = async (req, res) => {
+  const users = await User.find({});
+  res.status(200).json(users);
+};
+
 module.exports = {
-  signupUser
+  signupUser,
+  getAllUsers
 };
