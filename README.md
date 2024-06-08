@@ -5,7 +5,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 ## Base URL
 
 ```
-http://localhost:5000/api/courses/list
+https://courses-api-j67q.onrender.com/api/courses/list
 ```
 
 ## Endpoints
