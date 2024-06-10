@@ -32,9 +32,9 @@ const userSchema = new Schema(
       minlength: 3
     },
     role: {
-      type: String,
+      type: [String],
       enum: ["Student", "Teacher", "Admin", "Manager"],
-      default: "Student"
+      default: ["Student"]
     },
     isAdmin: {
       type: Boolean,
@@ -69,7 +69,7 @@ function validateUserInput(firstName, lastName, email, password) {
   if (validator.isEmpty(lastName)) {
     throw new Error("Last name is required!");
   }
-  if (validator.isEmail(email)) {
+  if (!validator.isEmail(email)) {
     throw new Error("Please enter valid email address!");
   }
   if (validator.isEmpty(email)) {
