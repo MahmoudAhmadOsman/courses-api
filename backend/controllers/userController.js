@@ -69,14 +69,15 @@ const signupUser = asyncHandler(async (req, res) => {
 // });
 
 const getAllUsers = async (req, res) => {
-  const user_id = req.user._id;
-  const isAdmin = req.user.isAdmin;
+  // const user_id = req.user._id;
+  // const isAdmin = req.user.isAdmin;
   try {
-    const users = await User.find({ user_id, isAdmin: true }).sort({
+    const users = await User.find({}).sort({
       createdAt: -1
     });
     res.status(200).json(users);
   } catch (error) {
+    console.log(error.message);
     next(error);
   }
 };

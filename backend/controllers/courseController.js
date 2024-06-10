@@ -22,8 +22,18 @@ const createCourse = asyncHandler(async (req, res) => {
   // Insert the user details into the database
   const user_id = req.user._id;
 
-  const { title, instructor, description, credit, price } = req.body;
-  // console.log("Course Details: ", req.body);
+  const {
+    title,
+    instructor,
+    description,
+    credit,
+    price,
+    role,
+    isAdmin,
+    isVerified,
+    isPaid
+  } = req.body;
+  console.log("Course Details: ", req.body);
 
   try {
     const course = await Course.create({
@@ -32,6 +42,10 @@ const createCourse = asyncHandler(async (req, res) => {
       description,
       credit,
       price,
+      role,
+      isAdmin,
+      isVerified,
+      isPaid,
       user_id
     });
     res.status(200).json({

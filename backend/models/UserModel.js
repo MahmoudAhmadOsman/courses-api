@@ -30,7 +30,30 @@ const userSchema = new Schema(
       required: ["Password is required!"],
       trim: true,
       minlength: 3
+    },
+    role: {
+      type: String,
+      enum: ["Student", "Teacher", "Admin", "Manager"],
+      default: "Student"
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false
+    },
+    isVerified: {
+      type: Boolean,
+      default: false
+    },
+    isPaid: {
+      type: Boolean,
+      default: false
     }
+    // courses: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Course"
+    //   }
+    // ]
   },
   {
     timestamps: true
