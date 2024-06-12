@@ -38,7 +38,7 @@ const verifyUser = asyncHandler(async (req, res) => {
     return res.status(400).json({ error: "No such user!" });
   }
 
-  res.redirect("https://courses-api-j67q.onrender.com/api/users/list");
+  res.redirect("/");
 });
 
 //Create new user
