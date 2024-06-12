@@ -6,19 +6,21 @@ const {
   verifyUser,
   getUserById,
   updateUserById,
-  deleteUser
+  deleteUser,
+  loginUser
 } = require("../controllers/userController");
 const isAdmin = require("../middleware/isAdmin");
+const protect = require("../middleware/protect");
 
 const router = express.Router();
 
 // Register a user route
 router.post("/register", signupUser);
 //Login a user route
-router.post("/login", signupUser);
+router.post("/login", loginUser);
 
 //Get all users
-router.get("/list", isAdmin, getAllUsers);
+router.get("/list", protect, isAdmin, getAllUsers);
 
 //get user by id
 router.get("/list/:id", getUserById);
