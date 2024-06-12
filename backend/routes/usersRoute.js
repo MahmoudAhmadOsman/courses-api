@@ -8,6 +8,7 @@ const {
   updateUserById,
   deleteUser
 } = require("../controllers/userController");
+const isAdmin = require("../middleware/isAdmin");
 
 const router = express.Router();
 
@@ -17,7 +18,7 @@ router.post("/register", signupUser);
 router.post("/login", signupUser);
 
 //Get all users
-router.get("/list", getAllUsers);
+router.get("/list", isAdmin, getAllUsers);
 
 //get user by id
 router.get("/list/:id", getUserById);
