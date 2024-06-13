@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavigationComponent from "./components/navigation/NavigationComponent";
 import HomeComponent from "./components/home/HomeComponent";
 import NotFound from "./utils/NotFound";
+import LoginComponent from "./auth/LoginComponent";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <React.Fragment>
           <NavigationComponent />
           <Routes>
+            <Route path="/login" element={<LoginComponent />} />
             <Route path="/" exact element={<HomeComponent />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
