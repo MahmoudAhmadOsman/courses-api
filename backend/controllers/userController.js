@@ -78,16 +78,13 @@ const signupUser = asyncHandler(async (req, res) => {
 // };
 
 const getAllUsers = async (req, res, next) => {
-  const user_id = req.user._id;
+  // const user_id = req.user._id;
   const isAdmin = req.user.isAdmin;
 
   if (!isAdmin) {
-    return res
-      .status(403)
-      .json({
-        message:
-          "Access forbidden: You are not authorized to view this resource"
-      });
+    return res.status(403).json({
+      message: "Access forbidden: You are not authorized to view this resource"
+    });
   }
 
   try {
