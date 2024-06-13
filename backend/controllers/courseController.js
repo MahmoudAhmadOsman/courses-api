@@ -54,11 +54,10 @@ const createCourse = asyncHandler(async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      messageError: "Error creating course",
-
+      messageError: "An error occured while creating new course!",
       error: error.message
     });
-    console.log(error);
+    console.log(error.message);
   }
 });
 

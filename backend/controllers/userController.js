@@ -88,6 +88,7 @@ const getAllUsers = async (req, res, next) => {
 
   try {
     const users = await User.find({}).sort({ createdAt: -1 });
+    // console.log(users);
     res.status(200).json(users);
   } catch (error) {
     console.log(error.message);
