@@ -20,6 +20,10 @@ router.post("/login", loginUser);
 
 //=== REQUIRE AUTH USING use() middle
 
+// router.use(requireAuth);
+//Get all users
+router.get("/list", requireAuth, getAllUsers);
+
 //get user by id
 router.get("/list/:id", getUserById);
 
@@ -32,9 +36,9 @@ router.get("/verify/:id", verifyUser);
 //delete user by id
 router.delete("/list/delete/:id", deleteUser);
 
-router.use(requireAuth);
-//Get all users
-router.get("/list", getAllUsers);
+// router.use(requireAuth);
+// //Get all users
+// router.get("/list", getAllUsers);
 // router.get("/list", protect, isAdmin, getAllUsers);
 
 module.exports = router;

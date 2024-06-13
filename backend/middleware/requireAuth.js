@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const Course = require("../models/CourseModel");
-
+const User = require("../models/UserModel");
 const requireAuth = async (req, res, next) => {
   // verify user is authenticated
   const { authorization } = req.headers;
@@ -16,7 +16,7 @@ const requireAuth = async (req, res, next) => {
   try {
     const { _id } = jwt.verify(token, process.env.SECRET);
 
-    req.user = await User.findOne({ _id }).select("_id");
+    req.user = await User.findOne({ _id }).select("_id isAdmin"); // check if the user is admin or not
     next();
   } catch (error) {
     console.log(error);
