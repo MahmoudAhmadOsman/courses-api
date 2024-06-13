@@ -9,8 +9,6 @@ const {
   deleteUser,
   loginUser
 } = require("../controllers/userController");
-const isAdmin = require("../middleware/isAdmin");
-const protect = require("../middleware/protect");
 
 const router = express.Router();
 
@@ -20,7 +18,8 @@ router.post("/register", signupUser);
 router.post("/login", loginUser);
 
 //Get all users
-router.get("/list", protect, isAdmin, getAllUsers);
+router.get("/list", getAllUsers);
+// router.get("/list", protect, isAdmin, getAllUsers);
 
 //get user by id
 router.get("/list/:id", getUserById);

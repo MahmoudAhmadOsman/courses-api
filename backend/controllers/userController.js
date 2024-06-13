@@ -63,18 +63,35 @@ const signupUser = asyncHandler(async (req, res) => {
 });
 
 //get all users
-// const getAllUsers = asyncHandler(async (req, res) => {
-//   const users = await User.find({});
-//   res.status(200).json(users);
-// });
 
-const getAllUsers = async (req, res) => {
-  // const user_id = req.user._id;
-  // const isAdmin = req.user.isAdmin;
+// const getAllUsers = async (req, res) => {
+//   const user_id = req.user._id;
+//   try {
+//     const user = await User.find({}).sort({
+//       createdAt: -1
+//     });
+//     res.status(200).json(user);
+//   } catch (error) {
+//     console.log(error.message);
+//     next(error);
+//   }
+// };
+
+const getAllUsers = async (req, res, next) => {
+  const user_id = req.user._id;
+  const isAdmin = req.user.isAdmin;
+
+  if (!isAdmin) {
+    return res
+      .status(403)
+      .json({
+        message:
+          "Access forbidden: You are not authorized to view this resource"
+      });
+  }
+
   try {
-    const users = await User.find({}).sort({
-      createdAt: -1
-    });
+    const users = await User.find({}).sort({ createdAt: -1 });
     res.status(200).json(users);
   } catch (error) {
     console.log(error.message);
