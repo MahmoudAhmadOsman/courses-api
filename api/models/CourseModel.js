@@ -31,6 +31,10 @@ const courseSchema = new Schema(
       unique: true,
       trim: true,
       required: [true, "Course price is required!"]
+    },
+    hasPaid: {
+      type: Boolean,
+      default: false
     }
   },
   {

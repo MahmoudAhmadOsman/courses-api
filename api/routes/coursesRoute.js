@@ -17,7 +17,7 @@ const router = express.Router();
 router.post("/seed", seedCourses);
 
 //=== REQUIRe AUTH USING use() middle
-router.use(requireAuth);
+// router.use(requireAuth);
 
 //3.use the router
 
@@ -25,7 +25,7 @@ router.use(requireAuth);
 router.get("/list", getAllCourses);
 
 //@ CREATE A COURSE
-router.post("/create", createCourse);
+router.post("/create", requireAuth, createCourse);
 
 //@GET A COURSE BY ID
 router.get("/list/:id", getCourseById);

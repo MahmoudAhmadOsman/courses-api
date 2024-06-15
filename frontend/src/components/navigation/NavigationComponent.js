@@ -26,9 +26,9 @@ const NavigationComponent = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="#">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
@@ -36,9 +36,9 @@ const NavigationComponent = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="#">
                   Register
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

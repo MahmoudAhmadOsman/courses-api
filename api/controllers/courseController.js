@@ -5,23 +5,42 @@ const Course = require("../models/CourseModel");
 //@INSERT MANY COURSES AT ONCE
 const seedCourses = asyncHandler(async (req, res) => {
   try {
-    const user_id = req.user_.id;
-    const createdCourses = await Course.insertMany(req.body);
+    const user_id = req.user_.id; // Ensure that req.user_.id is correctly set and accessible
+
+    // Add the user_id to each course in the request body
+    const coursesWithUser = req.body.map(course => ({ ...course, user_id }));
+
+    // Insert the modified courses
+    const createdCourses = await Course.insertMany(coursesWithUser);
+
     res.status(200).json({
       message: "Courses seeded successfully!",
       courses: createdCourses,
       user_id
     });
   } catch (error) {
+    console.error(error.stack); // Use console.error for logging errors
     res.status(400).json({ error: error.message });
   }
 });
 
-//@ CREATE A COURSE
-const createCourse = asyncHandler(async (req, res) => {
-  // Insert the user details into the database
-  const user_id = req.user._id;
+// const seedCourses = asyncHandler(async (req, res) => {
+//   const user_id = req.user_.id;
+//   try {
+//     const createdCourses = await Course.insertMany(req.body);
+//     res.status(200).json({
+//       message: "Courses seeded successfully!",
+//       courses: createdCourses,
+//       user_id
+//     });
+//   } catch (error) {
+//     console.log(error.stack);
+//     res.status(400).json({ error: error.message });
+//   }
+// });
 
+//@ CREATE A COURSE
+const createCourse = async (req, res) => {
   const {
     title,
     instructor,
@@ -29,13 +48,13 @@ const createCourse = asyncHandler(async (req, res) => {
     credit,
     price,
     role,
-    isAdmin,
-    isVerified,
-    isPaid
+    hasPaid
   } = req.body;
-  console.log("Course Details: ", req.body);
+  // console.log("Course Details: ", req.body);
 
   try {
+    // Insert the user details into the database
+    const user_id = req.user._id;
     const course = await Course.create({
       title,
       instructor,
@@ -43,9 +62,7 @@ const createCourse = asyncHandler(async (req, res) => {
       credit,
       price,
       role,
-      isAdmin,
-      isVerified,
-      isPaid,
+      hasPaid,
       user_id
     });
     res.status(200).json({
@@ -59,7 +76,7 @@ const createCourse = asyncHandler(async (req, res) => {
     });
     console.log(error.message);
   }
-});
+};
 
 //@ GET ALL COURSES
 
