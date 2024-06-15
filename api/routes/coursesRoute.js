@@ -13,10 +13,10 @@ const requireAuth = require("../middleware/requireAuth");
 
 const router = express.Router();
 //=== REQUIRe AUTH USING use() middle
-router.use(requireAuth);
+// router.use(requireAuth);
 
 //@SEED COURSES
-router.post("/seed", seedCourses);
+router.post("/seed", requireAuth, seedCourses);
 
 //3.use the router
 
@@ -24,13 +24,13 @@ router.post("/seed", seedCourses);
 router.get("/list", getAllCourses);
 
 //@ CREATE A COURSE
-router.post("/create", createCourse);
+router.post("/create", requireAuth, createCourse);
 
 //@GET A COURSE BY ID
 router.get("/list/:id", getCourseById);
 
 //@UPDATE COURSE
-router.put("/list/update/:id", updateCourse);
+router.put("/list/update/:id", requireAuth, updateCourse);
 
 //@DELETE COURSE
 router.delete("/list/delete/:id", deleteCourse);
