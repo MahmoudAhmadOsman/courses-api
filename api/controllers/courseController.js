@@ -23,21 +23,6 @@ const seedCourses = asyncHandler(async (req, res) => {
   }
 });
 
-// const seedCourses = asyncHandler(async (req, res) => {
-//   try {
-//     const user_id = req.user_.id;
-//     const createdCourses = await Course.insertMany(req.body);
-//     res.status(200).json({
-//       message: "Courses seeded successfully!",
-//       courses: createdCourses,
-//       user_id
-//     });
-//   } catch (error) {
-//     console.log(error.stack);
-//     res.status(400).json({ error: error.message });
-//   }
-// });
-
 //@ CREATE A COURSE
 const createCourse = async (req, res) => {
   const {
