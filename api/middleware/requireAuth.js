@@ -12,7 +12,7 @@ const requireAuth = async (req, res, next) => {
 
   try {
     const { _id } = jwt.verify(token, process.env.SECRET);
-
+    // req.user = await User.findOne({ _id }).select("_id isAdmin");
     req.user = await User.findOne({ _id }).select("_id isAdmin"); // check if the user is admin or not
     next();
   } catch (error) {

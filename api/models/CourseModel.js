@@ -28,13 +28,15 @@ const courseSchema = new Schema(
     },
     price: {
       type: Number,
-      unique: true,
-      trim: true,
       required: [true, "Course price is required!"]
     },
     hasPaid: {
       type: Boolean,
       default: false
+    },
+    user_id: {
+      type: String,
+      required: true
     }
   },
   {

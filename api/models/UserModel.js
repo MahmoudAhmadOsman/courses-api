@@ -43,11 +43,8 @@ const userSchema = new Schema(
     isVerified: {
       type: Boolean,
       default: false
-    },
-    isPaid: {
-      type: Boolean,
-      default: false
     }
+
     // courses: [
     //   {
     //     type: Schema.Types.ObjectId,

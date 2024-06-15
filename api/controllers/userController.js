@@ -17,8 +17,8 @@ const loginUser = asyncHandler(async (req, res) => {
     // create a token
     const token = createToken(user._id);
     //res.status(200).json({ firstName, email, token }); //send back firstName,email and password
-    res.status(200).json({ email, token }); // only send back email and token when logged in
-    //res.status(200).json({ user });
+    //res.status(200).json({ email, token }); // only send back email and token when logged in
+    res.status(200).json({ user, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
