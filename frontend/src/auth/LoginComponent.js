@@ -11,11 +11,13 @@ const LoginComponent = () => {
   };
   return (
     <section className="login-page">
-      <div className="d-flex justify-content-center align-items-center vh-100 bg-dark">
-        <div className="card p-4" style={{ width: "20rem" }}>
+      <div className="d-flex justify-content-center align-items-center 
+      vh-100 overflow-hidden  bg-dark">
+        <div className="card p-4" style={{ width: "23rem" }}>
           <div className="card-body">
             <h5 className="card-title text-center">
-              <i className="fa fa-lock fa-4x text-success" /> <b>LOGIN</b>
+              <i className="fa fa-lock fa-4x text-primary" /> <hr />
+              <b className="h2 opacity-50">Login</b> <br /> <br /> <br />
             </h5>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
@@ -24,7 +26,7 @@ const LoginComponent = () => {
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control form-control-lg"
                   placeholder="Enter email"
                   id="email"
                   aria-describedby="emailHelp"
@@ -38,7 +40,7 @@ const LoginComponent = () => {
                 </label>
                 <input
                   type="password"
-                  className="form-control"
+                  className="form-control form-control-lg"
                   placeholder="Enter password"
                   id="password"
                   aria-describedby="passwordHelp"
@@ -46,10 +48,14 @@ const LoginComponent = () => {
                   onChange={e => setPassword(e.target.value)}
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-100">
+              <button
+                type="submit"
+                className="btn btn-outline-primary btn-lg fw-bold"
+                disabled={!email || !password}
+              >
                 SUBMIT
-              </button>
-            </form>
+              </button> 
+            </form><br /> <br />
           </div>
         </div>
       </div>

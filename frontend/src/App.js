@@ -5,6 +5,8 @@ import NavigationComponent from "./components/navigation/NavigationComponent";
 import HomeComponent from "./components/home/HomeComponent";
 import NotFound from "./utils/NotFound";
 import LoginComponent from "./auth/LoginComponent";
+import AddCourse from "./components/courses/AddCourse";
+import CourseList from "./components/courses/CourseList";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <React.Fragment>
           <NavigationComponent />
           <Routes>
+            <Route path="/add-course" element={<AddCourse />} />
+            <Route path="/courses" element={<CourseList />} />
             <Route path="/login" element={<LoginComponent />} />
             <Route path="/" exact element={<HomeComponent />} />
             <Route path="*" element={<NotFound />} />

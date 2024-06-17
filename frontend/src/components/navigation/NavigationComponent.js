@@ -26,8 +26,13 @@ const NavigationComponent = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Contact Us
+                <Link className="nav-link" to="/courses">
+                  Courses
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/add-course">
+                  Add Course
                 </Link>
               </li>
               <li className="nav-item">

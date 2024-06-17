@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Home page style */
+.hero {
+  height: 100vh;
+  background-image: url("https://img.freepik.com/free-vector/gradient-background-green-tones_23-2148387744.jpg?w=1380&t=st=1718663371~exp=1718663971~hmac=da3faf779e79d2c1fe71876c9c255adba0249d299b671b44ab0a926fe25848fa");
+  background-position: center;
+  background-size: cover;
+  display: flex; /* Allow stacking content on top */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+/* Add new course style */
+#description{
+  
+  height: 250px;
+  margin-bottom: 60px;
+}
