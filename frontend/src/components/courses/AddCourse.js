@@ -4,12 +4,17 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 const AddCourse = () => {
+  const [title, setTitle] = useState("");
+  const [credit, setCredit] = useState("");
+  const [price, setPrice] = useState("");
+  const [instructor, setInstructor] = useState("");
+  // const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
   return (
     <section className="add-course">
       <div className="container mt-3">
         <div className="row mx-auto">
-          <div className="col-md-8">
+          <div className="col-md-8 col">
             <h1 className="text-primary">Add Course</h1> <hr />
             <div className="col-md-8 mb-3">
               <label htmlFor="title" className="form-label">
@@ -20,6 +25,8 @@ const AddCourse = () => {
                 className="form-control form-control-lg"
                 id="title"
                 placeholder="Enter course title"
+                value={title}
+                onChange={e => setTitle(e.target.value)}
               />
             </div>
             {/* Credit */}
@@ -32,6 +39,8 @@ const AddCourse = () => {
                 className="form-control form-control-lg"
                 id="credit"
                 placeholder="Enter credit amount"
+                value={credit}
+                onChange={e => setCredit(e.target.value)}
               />
             </div>
             {/* Price */}
@@ -44,6 +53,8 @@ const AddCourse = () => {
                 className="form-control form-control-lg"
                 id="price"
                 placeholder="Enter course price"
+                value={price}
+                onChange={e => setPrice(e.target.value)}
               />
             </div>
             {/* Instructor */}
@@ -56,6 +67,8 @@ const AddCourse = () => {
                 className="form-control form-control-lg"
                 id="instructor"
                 placeholder="Enter instructor name"
+                value={instructor}
+                onChange={e => setInstructor(e.target.value)}
               />
             </div>
             {/* Description */}
@@ -68,8 +81,11 @@ const AddCourse = () => {
                 id="description"
                 onChange={setValue}
                 value={value}
+                placeholder="Enter course description"
+                // onChange={e => setValue(e.target.value)}
               />
-              {/* <textarea
+              {/* 
+              <textarea
                 className="form-control"
                 id="description"
                 cols="30"
@@ -81,6 +97,7 @@ const AddCourse = () => {
               <button
                 type="submit"
                 className="btn btn-outline-primary btn-lg fw-bold"
+                disabled={!title || !credit || !price || !instructor || !value}
               >
                 SUBMIT
               </button>
@@ -88,7 +105,10 @@ const AddCourse = () => {
           </div>
 
           {/* Right col */}
-          <div className="col-md-4 bg-light" style={{ height: "100vh" }} />
+          <div
+            className="col-md-4 bg-light d-none d-lg-block"
+            style={{ height: "100vh" }}
+          />
         </div>
       </div>
     </section>
