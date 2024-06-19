@@ -24,7 +24,15 @@ code {
   justify-content: center; /* Horizontally center content */
 }
 /* Add new course style */
-#description{
+.add-course{ 
+  position: relative;
+
+}
+.add-course input[type="text"],
+input[type="number"]{
+  font-size: 12px;
+}
+.add-course #description{
   
   height: 250px;
   margin-bottom: 60px;

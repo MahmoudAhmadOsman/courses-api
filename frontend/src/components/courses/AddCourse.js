@@ -13,12 +13,15 @@ const AddCourse = () => {
   return (
     <section className="add-course">
       <div className="container mt-3">
-        <div className="row mx-auto">
-          <div className="col-md-8 col">
+        <div className="row">
+          <div className="col-md-8 mx-auto">
             <h1 className="text-primary">Add Course</h1> <hr />
+            <p className="lead mb-4">
+              Please provide course details using the below form.
+            </p>{" "}
             <div className="col-md-8 mb-3">
               <label htmlFor="title" className="form-label">
-                Title
+                Course Title
               </label>
               <input
                 type="text"
@@ -32,7 +35,7 @@ const AddCourse = () => {
             {/* Credit */}
             <div className="col-md-8 mb-3">
               <label htmlFor="credit" className="form-label">
-                Credit
+                Course Credit
               </label>
               <input
                 type="number"
@@ -46,7 +49,7 @@ const AddCourse = () => {
             {/* Price */}
             <div className="col-md-8 mb-3">
               <label htmlFor="price" className="form-label">
-                Price
+                Course Price
               </label>
               <input
                 type="number"
@@ -74,7 +77,7 @@ const AddCourse = () => {
             {/* Description */}
             <div className="col-md-8 mb-3">
               <label htmlFor="description" className="form-label">
-                Description
+                Course Description
               </label>{" "}
               <ReactQuill
                 theme="snow"
@@ -96,7 +99,7 @@ const AddCourse = () => {
             <div className="col-md-8 mb-3">
               <button
                 type="submit"
-                className="btn btn-outline-primary btn-lg fw-bold"
+                className="btn btn-outline-primary btn-lg fw-bold d-grid w-100"
                 disabled={!title || !credit || !price || !instructor || !value}
               >
                 SUBMIT
@@ -105,10 +108,7 @@ const AddCourse = () => {
           </div>
 
           {/* Right col */}
-          <div
-            className="col-md-4 bg-light d-none d-lg-block"
-            style={{ height: "100vh" }}
-          />
+          <div className="col-md-4 bg-light d-none d-lg-block" />
         </div>
       </div>
     </section>
