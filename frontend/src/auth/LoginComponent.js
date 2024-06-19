@@ -12,8 +12,11 @@ const LoginComponent = () => {
   return (
     <section className="login-page">
       <div className="d-flex justify-content-center align-items-center 
-      vh-100 overflow-hidden  bg-dark">
-        <div className="card p-4" style={{ width: "23rem" }}>
+      vh-100 overflow-hidden ">
+        <div
+          className="card p-4 shadow-lg p-3 mb-5 bg-white rounded"
+          style={{ width: "23rem" }}
+        >
           <div className="card-body">
             <h5 className="card-title text-center">
               <i className="fa fa-lock fa-4x text-primary" /> <hr />
@@ -54,8 +57,9 @@ const LoginComponent = () => {
                 disabled={!email || !password}
               >
                 SUBMIT
-              </button> 
-            </form><br /> <br />
+              </button>
+            </form>
+            <br /> <br />
           </div>
         </div>
       </div>

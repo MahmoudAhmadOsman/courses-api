@@ -29,3 +29,13 @@ code {
   height: 250px;
   margin-bottom: 60px;
 }
+
+/* =============== LOGIN PAGE STYLE ============== */
+.login-page{
+    background-color: #f0ecec;
+}
+.login-page input[type="email"],input[type="password"]{
+  font-size: 12px;
+  background-color: #2020200a;
+   
+}
