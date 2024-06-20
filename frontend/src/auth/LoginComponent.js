@@ -7,7 +7,9 @@ const LoginComponent = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("Email is: ", email, "Password", password);
+
+    alert("Your email is: " + email + " Your password is: " + password);
+    // console.log("Email is: ", email, "Password", password);
   };
   return (
     <section className="login-page">
