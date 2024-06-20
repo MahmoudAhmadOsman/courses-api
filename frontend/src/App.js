@@ -15,8 +15,8 @@ function App() {
         <React.Fragment>
           <NavigationComponent />
           <Routes>
-            <Route path="/add-course" element={<AddCourse />} />
-            <Route path="/courses" element={<CourseList />} />
+            <Route path="/courses/add-course" element={<AddCourse />} />
+            <Route path="/api/courses" element={<CourseList />} />
             <Route path="/login" element={<LoginComponent />} />
             <Route path="/" exact element={<HomeComponent />} />
             <Route path="*" element={<NotFound />} />

@@ -21,17 +21,17 @@ const NavigationComponent = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/courses">
+                <Link className="nav-link" to="/api/courses">
                   Courses
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/add-course">
+                <Link className="nav-link" to="/courses/add-course">
                   Add Course
                 </Link>
               </li>

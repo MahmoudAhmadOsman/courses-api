@@ -11,8 +11,19 @@ const AddCourse = () => {
   const [credit, setCredit] = useState("");
   const [price, setPrice] = useState("");
   const [instructor, setInstructor] = useState("");
-  // const [description, setDescription] = useState("");
-  const [value, setValue] = useState("");
+  const [description, setDescription] = useState("");
+
+  // Simulate loading with useEffect
+  useEffect(() => {
+    // Simulate a network request or other loading task
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false after 2 seconds
+    }, 2000);
+
+    // Clean up the timer
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="add-course">
       <div className="container mt-3">
@@ -20,7 +31,7 @@ const AddCourse = () => {
           <div className="col">
             {loading &&
               <p>
-                {<Loading />}
+                <Loading />
               </p>}
             {error &&
               <div className="alert alert-danger">
@@ -32,10 +43,11 @@ const AddCourse = () => {
           !error &&
           <div className="row">
             <div className="col-md-8 mx-auto">
-              <h1 className="text-primary">Add Course</h1> <hr />
+              <h1 className="text-primary">Add Course</h1>
+              <hr />
               <p className="lead mb-4">
                 Please provide course details using the below form.
-              </p>{" "}
+              </p>
               <div className="col-md-8 mb-3">
                 <label htmlFor="title" className="form-label">
                   Course Title
@@ -49,7 +61,6 @@ const AddCourse = () => {
                   onChange={e => setTitle(e.target.value)}
                 />
               </div>
-              {/* Credit */}
               <div className="col-md-8 mb-3">
                 <label htmlFor="credit" className="form-label">
                   Course Credit
@@ -63,7 +74,6 @@ const AddCourse = () => {
                   onChange={e => setCredit(e.target.value)}
                 />
               </div>
-              {/* Price */}
               <div className="col-md-8 mb-3">
                 <label htmlFor="price" className="form-label">
                   Course Price
@@ -77,7 +87,6 @@ const AddCourse = () => {
                   onChange={e => setPrice(e.target.value)}
                 />
               </div>
-              {/* Instructor */}
               <div className="col-md-8 mb-3">
                 <label htmlFor="instructor" className="form-label">
                   Instructor Name
@@ -91,42 +100,30 @@ const AddCourse = () => {
                   onChange={e => setInstructor(e.target.value)}
                 />
               </div>
-              {/* Description */}
               <div className="col-md-8 mb-3">
                 <label htmlFor="description" className="form-label">
                   Course Description
-                </label>{" "}
+                </label>
                 <ReactQuill
                   theme="snow"
                   id="description"
-                  onChange={setValue}
-                  value={value}
+                  onChange={setDescription}
+                  value={description}
                   placeholder="Enter course description"
-                  // onChange={e => setValue(e.target.value)}
                 />
-                {/* 
-              <textarea
-                className="form-control"
-                id="description"
-                cols="30"
-                rows="10"
-                placeholder="Enter course description"
-              /> */}
               </div>
               <div className="col-md-8 mb-3">
                 <button
                   type="submit"
                   className="btn btn-outline-primary btn-lg fw-bold d-grid w-100"
                   disabled={
-                    !title || !credit || !price || !instructor || !value
+                    !title || !credit || !price || !instructor || !description
                   }
                 >
                   SUBMIT
                 </button>
               </div>
             </div>
-
-            {/* Right col */}
             <div className="col-md-4 bg-light d-none d-lg-block" />
           </div>}
       </div>

@@ -59,7 +59,16 @@ const CourseList = () => {
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item">
                         <p>
-                          Price: <b className="text-danger"> ${course.price}</b>
+                          {/* Price: <b className="text-danger"> ${course.price}</b> */}
+                          Price:{" "}
+                          <b className="text-danger">
+                            {parseFloat(course.price).toLocaleString("en-US", {
+                              style: "currency",
+                              currency: "USD",
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2
+                            })}
+                          </b>
                         </p>
                       </li>
                       <li className="list-group-item">
