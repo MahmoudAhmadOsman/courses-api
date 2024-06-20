@@ -21,20 +21,22 @@ https://courses-api-j67q.onrender.com/api/courses/list
     {
       "id": 1,
       "title": "Groovy & Grails",
-      "description": "Groovy course description.",
        "instructor":"John Smith",
+      "description": "Groovy course description.",
       "credit": 4,
       "price": 1546,
+      "hasPaid": false,
       "createdAt": "2024-06-01T23:31:35.096Z",
       "updatedAt": "2024-06-01T23:31:35.096Z",
     },
     {
       "id": 2,
-     "title": "Introduction to Java",
+     "title": "Introduction to Java", 
+     "instructor":"John Doe",
       "description": "Introduction to Java course description.",
-      "instructor":"John Doe",
       "credit": 4,
       "price": 1546,
+      "hasPaid": false,
       "createdAt": "2024-06-01T23:31:35.096Z",
       "updatedAt": "2024-06-01T23:31:35.096Z"
     }
@@ -51,10 +53,11 @@ https://courses-api-j67q.onrender.com/api/courses/list
   {
     "id": 1,
     "title": "Groovy & Grails",
+    "instructor":"John Doe",
     "description": "Groovy course description.",
-      "instructor":"John Smith",
     "credit": 4,
     "price": 1546,
+    "hasPaid": false,
     "createdAt": "2024-06-01T23:31:35.096Z",
     "updatedAt": "2024-06-01T23:31:35.096Z",
   }
@@ -68,11 +71,12 @@ https://courses-api-j67q.onrender.com/api/courses/list
 - **Request Body Example:**
   ```json
   {
-      "title": "Groovy & Grails",
-      "description": "Groovy course description.",
-       "instructor":"John Smith",
+      "title": "Introduction to Java", 
+     "instructor":"John Doe",
+      "description": "Introduction to Java course description.",
       "credit": 4,
       "price": 1546,
+      "hasPaid": false,
   }
   ```
 - **Response Example:**
@@ -81,10 +85,12 @@ https://courses-api-j67q.onrender.com/api/courses/list
     "message": "Course created successfully",
     "course": {
       "_id": "665baf575dcd6c2ffe3ca85f",
-        "title": "Groovy & Grails",
-        "description": "Groovy course description",
-        "credit": 4,
-        "price": 1546,
+       "title": "Introduction to Java", 
+     "instructor":"John Doe",
+      "description": "Introduction to Java course description.",
+      "credit": 4,
+      "price": 1546,
+      "hasPaid": false,
         "createdAt": "2024-06-01T23:31:35.096Z",
         "updatedAt": "2024-06-01T23:31:35.096Z",
         "__v": 0
@@ -103,7 +109,7 @@ https://courses-api-j67q.onrender.com/api/courses/list
        "title": "Groovy & Grails",
         "description": "Groovy course description",
         "credit": 4,
-        "price": 1546,
+        "price": 2506,
   }
   ```
 - **Response Example:**
@@ -115,8 +121,8 @@ https://courses-api-j67q.onrender.com/api/courses/list
       "title": "Introduction to Programming",
       "description": "Updated course description.",
       "credit": 4,
-        "price": 1546,
-      "instructor": "John Davis"
+        "price": 2506,
+      "instructor": "John Doe"
     }
   }
   ```
