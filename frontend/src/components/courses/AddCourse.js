@@ -18,6 +18,7 @@ const AddCourse = () => {
     // Simulate a network request or other loading task
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 2 seconds
+      setError(null);
     }, 2000);
 
     // Clean up the timer
@@ -30,9 +31,9 @@ const AddCourse = () => {
         <div className="row">
           <div className="col">
             {loading &&
-              <p>
+              <div>
                 <Loading />
-              </p>}
+              </div>}
             {error &&
               <div className="alert alert-danger">
                 {error.message}

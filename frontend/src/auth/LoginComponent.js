@@ -1,15 +1,15 @@
-import React from "react";
 import { useState } from "react";
-
+import { useLogin } from "../hooks/useLogin";
 const LoginComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = e => {
+  const { login, error, isLoading } = useLogin();
+
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    alert("Your email is: " + email + " Your password is: " + password);
-    // console.log("Email is: ", email, "Password", password);
+    await login(email, password); //logout the user
   };
   return (
     <section className="login-page">

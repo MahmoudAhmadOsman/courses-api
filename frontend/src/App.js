@@ -7,6 +7,7 @@ import NotFound from "./utils/NotFound";
 import LoginComponent from "./auth/LoginComponent";
 import AddCourse from "./components/courses/AddCourse";
 import CourseList from "./components/courses/CourseList";
+import SignupComponent from "./auth/SignupComponent";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/courses/add-course" element={<AddCourse />} />
             <Route path="/api/courses" element={<CourseList />} />
-            <Route path="/login" element={<LoginComponent />} />
+            <Route path="/auth/login" element={<LoginComponent />} />
+            <Route path="/auth/register" element={<SignupComponent />} />
             <Route path="/" exact element={<HomeComponent />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

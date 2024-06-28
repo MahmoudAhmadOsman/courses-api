@@ -36,12 +36,12 @@ const NavigationComponent = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
+                <Link className="nav-link" to="/auth/login">
                   Login
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/auth/register">
                   Register
                 </Link>
               </li>
