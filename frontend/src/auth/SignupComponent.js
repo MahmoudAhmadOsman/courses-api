@@ -223,7 +223,7 @@ const SignupComponent = () => {
                                   </form>
                                   <p className="text-muted mt-2">
                                       Already have an account? &nbsp;
-                                      <Link className="text-primary" to="/auth/login">
+                                      <Link className="text-primary" to="/api/users/login">
                                           Sign In
                                       </Link>
                                   </p>
