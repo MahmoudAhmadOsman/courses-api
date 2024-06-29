@@ -210,7 +210,7 @@ const SignupComponent = () => {
                                                       password === ""
                                                   }
                                               >
-                                                  Next
+                                                  REGISTER
                                               </button>
                                           </>
                                  
