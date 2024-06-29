@@ -33,7 +33,7 @@ export const useLogin = () => {
 
       //3. update loading state
       setIsLoading(false);
-      nagivate("/dashboard"); // redirect the user to the dashboard
+      nagivate("/"); // redirect the user to the dashboard
     }
   };
 
