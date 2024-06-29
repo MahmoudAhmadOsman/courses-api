@@ -27,7 +27,7 @@ const AddCourse = () => {
 
   return (
     <section className="add-course">
-      <div className="container mt-3">
+      <div className="container">
         <div className="row">
           <div className="col">
             {loading &&
@@ -44,7 +44,7 @@ const AddCourse = () => {
           !error &&
           <div className="row">
             <div className="col-md-8 mx-auto">
-              <h1 className="text-primary">Add Course</h1>
+              <h1 className="text-primary mt-3">Add Course</h1>
               <hr />
               <p className="lead mb-4">
                 Please provide course details using the below form.
