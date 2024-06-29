@@ -59,10 +59,10 @@ const SignupComponent = () => {
       <section className="sign-up">
           <div className="container">
               <div className="row">
-                  <div className="col-md-10 mx-auto mt-4 mb-4 ">
+                  <div className="col-md-10 mx-auto w-50 mt-4 mb-4 ">
                       <div className="card shadow-lg p-3 mb-5 bg-body rounded">
                           <div className="card-body">
-                              <div className="bg-secondary p-3 p-md-5">
+                              <div className="bg-light p-3 p-md-5">
                                   {error && (
                                       <p className="text-danger text-center fs-4 border border-danger p-2">
                                           {error}
