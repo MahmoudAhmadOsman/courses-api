@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/courses/add-course" element={<AddCourse />} />
             <Route path="/api/courses" element={<CourseList />} />
-            <Route path="/api/users/register" element={<LoginComponent />} />
+            <Route path="/api/users/login" element={<LoginComponent />} />
             <Route path="/api/users/register" element={<SignupComponent />} />
             <Route path="/" exact element={<HomeComponent />} />
             <Route path="*" element={<NotFound />} />
