@@ -57,7 +57,7 @@ const LoginComponent = () => {
 										<button
 											type="submit"
 											className="btn btn-outline-primary fw-bold btn-lg"
-											// disabled={isLoading}
+											 
 											disabled={isLoading || !email || !password}
 										>
 											{!error && isLoading ? (
