@@ -53,13 +53,40 @@ const LoginComponent = () => {
                   onChange={e => setPassword(e.target.value)}
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-outline-primary btn-lg fw-bold"
-                disabled={!email || !password}
-              >
-                SUBMIT
-              </button>
+                    <div className="d-grid gap-2 mt-3">
+										<button
+											type="submit"
+											className="btn btn-outline-primary fw-bold btn-lg"
+											// disabled={isLoading}
+											disabled={isLoading || !email || !password}
+										>
+											{!error && isLoading ? (
+												<>
+													<span
+														className="spinner-border spinner-border-sm me-3"
+														role="status"
+														aria-hidden="true"
+														style={{ width: "1.5rem", height: "1.5rem" }}
+													></span>
+													<small
+														className="text-muted"
+														style={{ fontSize: "12px" }}
+													>
+														Please wait...
+													</small>
+												</>
+											) : (
+												<div>LOGIN</div>
+											)}
+										</button>
+									</div>
+              // <button
+              //   type="submit"
+              //   className="btn btn-outline-primary btn-lg fw-bold"
+              //   disabled={!email || !password}
+              // >
+              //   SUBMIT
+              // </button>
             </form>
             <br /> <br />
           </div>
