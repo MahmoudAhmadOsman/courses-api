@@ -20,6 +20,14 @@ const LoginComponent = () => {
           style={{ width: "23rem" }}
         >
           <div className="card-body">
+	
+		{error && !isLoading && (
+			<p className="text-danger text-center border border-danger p-2">
+			{error}
+			</p>
+		)}
+
+									
             <h5 className="card-title text-center">
               <i className="fa fa-lock fa-4x text-primary" /> <hr />
               <b className="h2 opacity-50">Login</b> <br /> <br /> <br />
