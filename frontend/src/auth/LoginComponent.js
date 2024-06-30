@@ -79,14 +79,18 @@ const LoginComponent = () => {
 												<div>LOGIN</div>
 											)}
 										</button>
-									</div>
-              // <button
-              //   type="submit"
-              //   className="btn btn-outline-primary btn-lg fw-bold"
-              //   disabled={!email || !password}
-              // >
-              //   SUBMIT
-              // </button>
+		
+
+{/*   <button
+                type="submit"
+                className="btn btn-outline-primary btn-lg fw-bold"
+                disabled={!email || !password}
+              >
+                SUBMIT
+              </button> */}						</div>
+
+				
+            
             </form>
             <br /> <br />
           </div>
