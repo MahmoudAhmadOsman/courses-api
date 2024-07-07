@@ -24,10 +24,12 @@ const AddCourse = () => {
 
 const {title,credit, price, instructor, description }= formData;
 
-const handleSubmit = (e) =>{
-	setFormData({...formData, [e.target.name]: e.target.value})
- };
+ 
+const handleSubmit = (e) => {
+  setFormData({ ...formDate, [e.target.name]: e.target.value });
+};
 
+	
 
   // Simulate loading with useEffect
   useEffect(() => {
@@ -129,17 +131,30 @@ const handleSubmit = (e) =>{
                 <label htmlFor="description" className="form-label">
                   Course Description
                 </label>
-                <ReactQuill
+             {/*     <ReactQuill
                   theme="snow"
                   id="description"
-         {/* onChange={setDescription} */}
+        
                 
                   placeholder="Enter course description"
               value = { instructor }
               onChange = { handleSubmit }
               name = "instructor"
-                />
+                /> */}
+
+		<ReactQuill
+		theme="snow"
+		id="description"
+		value={description}
+		onChange={(value) => setFormData({ ...formDate, description: value })}
+		placeholder="Enter course description"
+		/>
+
+
+		      
               </div>
+
+		      
               <div className="col-md-8 mb-3">
                 <button
                   type="submit"
