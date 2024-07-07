@@ -7,11 +7,27 @@ import Loading from "../../utils/Loading";
 const AddCourse = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [title, setTitle] = useState("");
-  const [credit, setCredit] = useState("");
-  const [price, setPrice] = useState("");
-  const [instructor, setInstructor] = useState("");
-  const [description, setDescription] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [credit, setCredit] = useState("");
+  // const [price, setPrice] = useState("");
+  // const [instructor, setInstructor] = useState("");
+  // const [description, setDescription] = useState("");
+
+
+  const [formDate, setFormData] = useState({
+    	title: "",
+    	credit: "",
+    	price: "",
+    	instructor: "",
+    	description:""
+})
+
+const {title,credit, price, instructor, description }= formData;
+
+const handleSubmit = (e) =>{
+	setFormData({...formData, [e.target.name]: e.target.value})
+ };
+
 
   // Simulate loading with useEffect
   useEffect(() => {
@@ -58,8 +74,9 @@ const AddCourse = () => {
                   className="form-control form-control-lg"
                   id="title"
                   placeholder="Enter course title"
-                  value={title}
-                  onChange={e => setTitle(e.target.value)}
+                  value = {title}
+                  onChange = {handleSubmit}
+                  name = "title"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -71,8 +88,10 @@ const AddCourse = () => {
                   className="form-control form-control-lg"
                   id="credit"
                   placeholder="Enter credit amount"
-                  value={credit}
-                  onChange={e => setCredit(e.target.value)}
+             
+                  value = {credit}
+                  onChange = {handleSubmit}
+                  name = "credit"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -84,8 +103,10 @@ const AddCourse = () => {
                   className="form-control form-control-lg"
                   id="price"
                   placeholder="Enter course price"
-                  value={price}
-                  onChange={e => setPrice(e.target.value)}
+         
+                 value = {price}
+                onChange = {handleSubmit}
+                name = "price"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -97,8 +118,11 @@ const AddCourse = () => {
                   className="form-control form-control-lg"
                   id="instructor"
                   placeholder="Enter instructor name"
-                  value={instructor}
-                  onChange={e => setInstructor(e.target.value)}
+         
+                    
+                value = {instructor}
+                onChange = { handleSubmit }
+                name = "instructor"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -108,9 +132,12 @@ const AddCourse = () => {
                 <ReactQuill
                   theme="snow"
                   id="description"
-                  onChange={setDescription}
-                  value={description}
+         {/* onChange={setDescription} */}
+                
                   placeholder="Enter course description"
+              value = { instructor }
+              onChange = { handleSubmit }
+              name = "instructor"
                 />
               </div>
               <div className="col-md-8 mb-3">
