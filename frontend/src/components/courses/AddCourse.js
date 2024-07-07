@@ -146,7 +146,7 @@ const handleSubmit = (e) => {
 		theme="snow"
 		id="description"
 		value={description}
-		onChange={(value) => setFormData({ ...formDate, description: value })}
+		onChange={(value) => setFormData({ ...formData, description: value })}
 		placeholder="Enter course description"
 		/>
 
