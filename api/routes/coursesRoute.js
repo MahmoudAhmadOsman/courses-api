@@ -33,12 +33,12 @@ router.get("/list/:id", getCourseById);
 router.put("/list/update/:id", requireAuth, updateCourse);
 
 //@DELETE COURSE
-router.delete("/list/delete/:id", deleteCourse);
+router.delete("/list/delete/:id", requireAuth, deleteCourse);
 
 //@DELLE ALL COURSES
-router.delete("/deleteAll", deleteCourse);
+router.delete("/deleteAll", requireAuth, deleteCourse);
 
 //@SEED COURSES
-// router.post("/seed", seedCourses);
+// router.post("/seed", requireAuth, seedCourses);
 
 module.exports = router; //4. use this router in index.js
