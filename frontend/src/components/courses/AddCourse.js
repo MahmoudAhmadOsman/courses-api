@@ -26,7 +26,7 @@ const {title,credit, price, instructor, description }= formData;
 
  
 const handleSubmit = (e) => {
-  setFormData({ ...formDate, [e.target.name]: e.target.value });
+  setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
 	
