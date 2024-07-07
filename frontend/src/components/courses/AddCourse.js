@@ -14,7 +14,7 @@ const AddCourse = () => {
   // const [description, setDescription] = useState("");
 
 
-  const [formDate, setFormData] = useState({
+  const [formData, setFormData] = useState({
     	title: "",
     	credit: "",
     	price: "",
