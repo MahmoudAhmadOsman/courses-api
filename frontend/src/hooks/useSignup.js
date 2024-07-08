@@ -55,7 +55,7 @@ export const useSignup = () => {
       localStorage.removeItem("user", JSON.stringify(data));
 
       setTimeout(() => {
-        navigate("/auth/login");
+        navigate("/api/users/login");
         window.location.reload();
       }, 2000);
 
