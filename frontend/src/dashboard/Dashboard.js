@@ -52,6 +52,10 @@ const Dashboard = () => {
                 <b>Email Address: </b>
                 {user.email}
               </p>
+              <p>
+                <b>Your Role: </b>
+                {user.role}
+              </p>
             </div>
             <div class="col">Column</div>
             <div class="col">Column</div>

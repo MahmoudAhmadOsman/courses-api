@@ -17,10 +17,17 @@ const loginUser = asyncHandler(async (req, res) => {
     // create a token
     const token = createToken(user._id);
     //res.status(200).json({ firstName, email, token }); //send back firstName,email and password
-    res
-      .status(200)
-      .json({ email, token, firstName, lastName, isAdmin, createdAt }); // only send back email and token when logged in
+    // res
+    //   .status(200)
+    //   .json({ email, token }); // only send back email and token when logged in
     // res.status(200).json({ user, token }); // this sends everything about the user
+    res.status(200).json({
+      firstName,
+      lastName,
+      isVerified,
+      isAdmin,
+      createdAt,
+    });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -33,7 +40,7 @@ const verifyUser = asyncHandler(async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).json({ error: "No such user!" });
   }
-  const user = await User.findOneAndUpdate({ _id: id }, { verified: true });
+  const user = await User.findOneAndUpdate({ _id: id }, { isVerified: true });
   // const user = await User.findOneAndUpdate({ _id: id });// before 1/18/2024
 
   if (!user) {
