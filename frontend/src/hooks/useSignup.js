@@ -19,14 +19,14 @@ export const useSignup = () => {
       const response = await fetch(BASE_URL + "/api/users/register", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           firstName,
           lastName,
           email,
-          password
-        })
+          password,
+        }),
       });
 
       const data = await response.json();
@@ -49,7 +49,7 @@ export const useSignup = () => {
         title: "Success",
         text: "New user registered successfully!!",
         showConfirmButton: false,
-        timer: 2500
+        timer: 2500,
       });
 
       localStorage.removeItem("user", JSON.stringify(data));

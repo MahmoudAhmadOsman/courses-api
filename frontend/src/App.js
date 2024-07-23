@@ -8,6 +8,7 @@ import LoginComponent from "./auth/LoginComponent";
 import AddCourse from "./components/courses/AddCourse";
 import CourseList from "./components/courses/CourseList";
 import SignupComponent from "./auth/SignupComponent";
+import Dashboard from "./dashboard/Dashboard";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <React.Fragment>
           <NavigationComponent />
           <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/courses/add-course" element={<AddCourse />} />
             <Route path="/api/courses" element={<CourseList />} />
             <Route path="/api/users/login" element={<LoginComponent />} />

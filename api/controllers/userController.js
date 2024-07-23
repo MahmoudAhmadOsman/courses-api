@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/UserModel");
 
 //user token
-const createToken = _id => {
+const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "1d" });
 };
 
@@ -17,7 +17,9 @@ const loginUser = asyncHandler(async (req, res) => {
     // create a token
     const token = createToken(user._id);
     //res.status(200).json({ firstName, email, token }); //send back firstName,email and password
-    res.status(200).json({ email, token }); // only send back email and token when logged in
+    res
+      .status(200)
+      .json({ email, token, firstName, lastName, isAdmin, createdAt }); // only send back email and token when logged in
     // res.status(200).json({ user, token }); // this sends everything about the user
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -57,7 +59,7 @@ const signupUser = asyncHandler(async (req, res) => {
     // res.status(400).json({ error: error.message });
     res.status(400).json({
       error: error.message,
-      message: "Unable to create new user account!!"
+      message: "Unable to create new user account!!",
     });
   }
 });
@@ -82,7 +84,8 @@ const getAllUsers = async (req, res, next) => {
   console.log("User Details:", req.user);
   if (req.user.isAdmin !== true) {
     return res.status(403).json({
-      message: "Access forbidden: You are not authorized to view this resource!"
+      message:
+        "Access forbidden: You are not authorized to view this resource!",
     });
   }
 
@@ -126,7 +129,7 @@ const updateUserById = async (req, res) => {
   const user = await User.findOneAndUpdate(
     { _id: id },
     {
-      ...req.body
+      ...req.body,
     }
   );
 
@@ -162,5 +165,5 @@ module.exports = {
   getUserById,
   updateUserById,
   deleteUser,
-  verifyUser
+  verifyUser,
 };

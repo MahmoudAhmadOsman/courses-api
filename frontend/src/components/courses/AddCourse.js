@@ -13,23 +13,19 @@ const AddCourse = () => {
   // const [instructor, setInstructor] = useState("");
   // const [description, setDescription] = useState("");
 
-
   const [formData, setFormData] = useState({
-    	title: "",
-    	credit: "",
-    	price: "",
-    	instructor: "",
-    	description:""
-})
+    title: "",
+    credit: "",
+    price: "",
+    instructor: "",
+    description: "",
+  });
 
-const {title,credit, price, instructor, description }= formData;
+  const { title, credit, price, instructor, description } = formData;
 
- 
-const handleSubmit = (e) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
-};
-
-	
+  const handleSubmit = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   // Simulate loading with useEffect
   useEffect(() => {
@@ -48,18 +44,15 @@ const handleSubmit = (e) => {
       <div className="container">
         <div className="row">
           <div className="col">
-            {loading &&
+            {loading && (
               <div>
                 <Loading />
-              </div>}
-            {error &&
-              <div className="alert alert-danger">
-                {error.message}
-              </div>}
+              </div>
+            )}
+            {error && <div className="alert alert-danger">{error.message}</div>}
           </div>
         </div>
-        {!loading &&
-          !error &&
+        {!loading && !error && (
           <div className="row">
             <div className="col-md-8 mx-auto">
               <h1 className="text-primary mt-3">Add Course</h1>
@@ -76,9 +69,9 @@ const handleSubmit = (e) => {
                   className="form-control form-control-lg"
                   id="title"
                   placeholder="Enter course title"
-                  value = {title}
-                  onChange = {handleSubmit}
-                  name = "title"
+                  value={title}
+                  onChange={handleSubmit}
+                  name="title"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -90,10 +83,9 @@ const handleSubmit = (e) => {
                   className="form-control form-control-lg"
                   id="credit"
                   placeholder="Enter credit amount"
-             
-                  value = {credit}
-                  onChange = {handleSubmit}
-                  name = "credit"
+                  value={credit}
+                  onChange={handleSubmit}
+                  name="credit"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -105,10 +97,9 @@ const handleSubmit = (e) => {
                   className="form-control form-control-lg"
                   id="price"
                   placeholder="Enter course price"
-         
-                 value = {price}
-                onChange = {handleSubmit}
-                name = "price"
+                  value={price}
+                  onChange={handleSubmit}
+                  name="price"
                 />
               </div>
               <div className="col-md-8 mb-3">
@@ -120,18 +111,16 @@ const handleSubmit = (e) => {
                   className="form-control form-control-lg"
                   id="instructor"
                   placeholder="Enter instructor name"
-         
-                    
-                value = {instructor}
-                onChange = { handleSubmit }
-                name = "instructor"
+                  value={instructor}
+                  onChange={handleSubmit}
+                  name="instructor"
                 />
               </div>
               <div className="col-md-8 mb-3">
                 <label htmlFor="description" className="form-label">
                   Course Description
                 </label>
-             {/*     <ReactQuill
+                {/*     <ReactQuill
                   theme="snow"
                   id="description"
         
@@ -142,19 +131,17 @@ const handleSubmit = (e) => {
               name = "instructor"
                 /> */}
 
-		<ReactQuill
-		theme="snow"
-		id="description"
-		value={description}
-		onChange={(value) => setFormData({ ...formData, description: value })}
-		placeholder="Enter course description"
-		/>
-
-
-		      
+                <ReactQuill
+                  theme="snow"
+                  id="description"
+                  value={description}
+                  onChange={(value) =>
+                    setFormData({ ...formData, description: value })
+                  }
+                  placeholder="Enter course description"
+                />
               </div>
 
-		      
               <div className="col-md-8 mb-3">
                 <button
                   type="submit"
@@ -168,7 +155,8 @@ const handleSubmit = (e) => {
               </div>
             </div>
             <div className="col-md-4 bg-light d-none d-lg-block" />
-          </div>}
+          </div>
+        )}
       </div>
     </section>
   );

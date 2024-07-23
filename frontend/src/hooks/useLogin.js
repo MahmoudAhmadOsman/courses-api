@@ -16,7 +16,7 @@ export const useLogin = () => {
     const response = await fetch(BASE_URL + "/api/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
     const json = await response.json();
 
@@ -33,7 +33,7 @@ export const useLogin = () => {
 
       //3. update loading state
       setIsLoading(false);
-      nagivate("/"); // redirect the user to the dashboard
+      nagivate("/dashboard"); // redirect the user to the dashboard
     }
   };
 

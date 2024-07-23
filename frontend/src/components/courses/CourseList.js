@@ -29,20 +29,14 @@ const CourseList = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            {loading &&
-              <p>
-                {<Loading />}
-              </p>}
-            {error &&
-              <div className="alert alert-danger">
-                {error.message}
-              </div>}
+            {loading && <p>{<Loading />}</p>}
+            {error && <div className="alert alert-danger">{error.message}</div>}
           </div>
         </div>
         <div className="row">
           {!loading &&
             !error &&
-            courses.map(course =>
+            courses.map((course) => (
               <div className="col-md-3 col-sm-6" key={course.id}>
                 <div className="card mb-4">
                   <img
@@ -52,9 +46,7 @@ const CourseList = () => {
                   />
                   <div className="card-body">
                     <div className="card-header">
-                      <h5 className="card-title">
-                        {course.title}
-                      </h5>
+                      <h5 className="card-title">{course.title}</h5>
                     </div>
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item">
@@ -66,7 +58,7 @@ const CourseList = () => {
                               style: "currency",
                               currency: "USD",
                               minimumFractionDigits: 2,
-                              maximumFractionDigits: 2
+                              maximumFractionDigits: 2,
                             })}
                           </b>
                         </p>
@@ -84,7 +76,7 @@ const CourseList = () => {
                   </div>
                 </div>
               </div>
-            )}
+            ))}
         </div>
       </div>
     </div>
