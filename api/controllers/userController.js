@@ -14,14 +14,11 @@ const loginUser = asyncHandler(async (req, res) => {
   try {
     const user = await User.login(email, password);
 
-    // create a token
+    const { firstName, lastName, isVerified, isAdmin, createdAt } = user;
     const token = createToken(user._id);
-    //res.status(200).json({ firstName, email, token }); //send back firstName,email and password
-    // res
-    //   .status(200)
-    //   .json({ email, token }); // only send back email and token when logged in
-    // res.status(200).json({ user, token }); // this sends everything about the user
     res.status(200).json({
+      email,
+      token,
       firstName,
       lastName,
       isVerified,
