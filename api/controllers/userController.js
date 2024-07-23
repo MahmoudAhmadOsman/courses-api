@@ -14,13 +14,14 @@ const loginUser = asyncHandler(async (req, res) => {
   try {
     const user = await User.login(email, password);
 
-    const { firstName, lastName, isVerified, isAdmin, createdAt } = user;
+    const { firstName, lastName, role, isVerified, isAdmin, createdAt } = user;
     const token = createToken(user._id);
     res.status(200).json({
       email,
       token,
       firstName,
       lastName,
+      role,
       isVerified,
       isAdmin,
       createdAt,

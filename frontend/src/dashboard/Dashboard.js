@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
-
+import { useLogout } from "../hooks/useLogout";
 const Dashboard = () => {
-  const { user } = useAuthContext(); // to get the logged user information
-
+  const { user } = useAuthContext();
+  const { logout } = useLogout();
+  const handleClick = () => {
+    logout();
+  };
   return (
     <div className="d-flex">
       <div
@@ -31,7 +34,8 @@ const Dashboard = () => {
           <Link className="nav-link text-white" to="#">
             <i className="fa fa-envelope"></i> Messages
           </Link>
-          <Link className="nav-link text-white" to="#">
+          {/*  */}
+          <Link className="nav-link text-white" onClick={handleClick}>
             <i className="fa fa-sign-out"></i> Logout
           </Link>
         </nav>
@@ -43,19 +47,34 @@ const Dashboard = () => {
         <div className="container">
           .
           <div class="row justify-content-center align-items-center g-2">
-            <div class="col bg-white p-3">
+            <div className="col bg-white p-3">
               <h3 className="text-uppercase"> Welcome to Dashboard</h3> <hr />
-              <p>
-                <b> Full Name:</b> {user.firstName} {user.lastName}
-              </p>
-              <p>
-                <b>Email Address: </b>
-                {user.email}
-              </p>
-              <p>
-                <b>Your Role: </b>
-                {user.role}
-              </p>
+              <div className="text-muted">
+                <p>
+                  <b> Full Name:</b> {user && user.firstName}{" "}
+                  {user && user.lastName}
+                </p>
+                <p>
+                  <b>Email Address: </b>
+                  {user.email}
+                </p>
+                <p>
+                  <b>Role: </b>{" "}
+                  {user && user.role ? (
+                    <div> {user.role}</div>
+                  ) : (
+                    <div>Admin</div>
+                  )}
+                </p>
+                <p>
+                  <b>Is Admin: </b>
+                  {user && user.isAdmin ? (
+                    <div className="btn btn-outline-success btn-sm">YES</div>
+                  ) : (
+                    <div className="btn btn-outline-danger btn-sm">NO</div>
+                  )}
+                </p>
+              </div>
             </div>
             <div class="col">Column</div>
             <div class="col">Column</div>
