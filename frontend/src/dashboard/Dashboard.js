@@ -10,13 +10,22 @@ const Dashboard = () => {
   };
 
   const getRoleDisplay = () => {
-    if (
-      user &&
-      (user.role.includes("Admin") || user.role.includes("Manager"))
-    ) {
-      return "Admin | Manager";
+    if (user && user.role.includes("Admin")) {
+      return "Admin";
+    } else if (user && user.role.includes("Manager")) {
+      return "Manager";
+    } else if (user && user.role.includes("Student")) {
+      return "Student";
+    } else {
+      return "Normal User";
     }
-    return user && user.role.join(" | ");
+    // if (
+    //   user &&
+    //   (user.role.includes("Admin") || user.role.includes("Manager"))
+    // ) {
+    //   return "Admin | Manager";
+    // }
+    // return user && user.role.join(" | ");
   };
 
   return (
@@ -70,12 +79,6 @@ const Dashboard = () => {
                 <p>
                   <b>Your Role: </b>
                   {getRoleDisplay()}
-                  {/* {(user && user.role === "Admin") ||
-                  user.role === "Manager" ? (
-                    <div> {user && user.role}</div>
-                  ) : (
-                    <div>Not Admin</div>
-                  )} */}
                 </p>
                 <p>
                   <b>Is Admin: </b>
