@@ -32,8 +32,9 @@ const userSchema = new Schema(
       minlength: 3,
     },
     role: {
-      type: [String],
-      enum: ["Student", "Teacher", "Admin", "Manager"],
+      // type: [String],
+      type: Array,
+      // enum: ["Student", "Teacher", "Admin", "Manager"],
       default: [],
       // default: ["Student"]
     },
