@@ -26,7 +26,7 @@ const NavigationComponent = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/dashboard">
+                <Link className="nav-link" to="/api/dashboard">
                   Dashboard
                 </Link>
               </li>
@@ -54,8 +54,6 @@ const NavigationComponent = () => {
           </div>
         </div>
       </nav>
-     
-
     </>
   );
 };

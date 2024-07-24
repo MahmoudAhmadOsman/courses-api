@@ -8,15 +8,26 @@ const Dashboard = () => {
   const handleClick = () => {
     logout();
   };
+
+  const getRoleDisplay = () => {
+    if (
+      user &&
+      (user.role.includes("Admin") || user.role.includes("Manager"))
+    ) {
+      return "Admin | Manager";
+    }
+    return user && user.role.join(" | ");
+  };
+
   return (
     <div className="d-flex">
       <div
         className="bg-secondary text-white vh-100 position-sticky"
-        style={{ minWidth: "250px" }}
+        // style={{ minWidth: "250px" }}
       >
         <nav className="nav flex-column p-3">
           <span className="nav-link text-white">
-            <i className="fa fa-user"></i> {user.firstName}
+            <h3>Dashboard</h3> <hr />
           </span>
 
           <Link className="nav-link text-white" to="/">
@@ -42,12 +53,10 @@ const Dashboard = () => {
       </div>{" "}
       {/* Main Content goes here */}
       <div className="p-3" style={{ flex: 1 }}>
-        <h2>Main Content</h2>
-
         <div className="container">
-          .
-          <div class="row justify-content-center align-items-center g-2">
-            <div className="col bg-white p-3">
+          <h2 className="mb-3">Main Content</h2> <hr />
+          <div class="row justify-content-center align-items-center g-2 mt-3">
+            <div className="col shadow-lg p-3 mb-5 bg-body rounded bg-white">
               <h3 className="text-uppercase"> Welcome to Dashboard</h3> <hr />
               <div className="text-muted">
                 <p>
@@ -56,15 +65,17 @@ const Dashboard = () => {
                 </p>
                 <p>
                   <b>Email Address: </b>
-                  {user.email}
+                  {user && user.email}
                 </p>
                 <p>
-                  <b>Role: </b>{" "}
-                  {user && user.role ? (
-                    <div> {user.role}</div>
+                  <b>Your Role: </b>
+                  {getRoleDisplay()}
+                  {/* {(user && user.role === "Admin") ||
+                  user.role === "Manager" ? (
+                    <div> {user && user.role}</div>
                   ) : (
-                    <div>Admin</div>
-                  )}
+                    <div>Not Admin</div>
+                  )} */}
                 </p>
                 <p>
                   <b>Is Admin: </b>

@@ -154,7 +154,10 @@ const AddCourse = () => {
                 </button>
               </div>
             </div>
-            <div className="col-md-4 bg-light d-none d-lg-block" />
+            <div
+              className="col-md-4 bg-light d-none d-lg-block "
+              id="cr-panel"
+            />
           </div>
         )}
       </div>

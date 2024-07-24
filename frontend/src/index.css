@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(247, 243, 247);
+  background-color: #efefef;
 }
 
 code {
@@ -35,9 +35,12 @@ input[type="number"]{
   font-size: 12px;
 }
 .add-course #description{
-  
+  background-color: #fff;
   height: 250px;
   margin-bottom: 60px;
+}
+.add-course #cr-pabel{
+  background-color: #ebebeb !important;
 }
 
 /* =============== LOGIN PAGE STYLE ============== */

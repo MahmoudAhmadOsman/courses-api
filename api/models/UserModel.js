@@ -10,40 +10,41 @@ const userSchema = new Schema(
       type: String,
       required: ["First name is required!!"],
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     lastName: {
       type: String,
       required: ["Last name is required!"],
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     email: {
       type: String,
       required: ["Email address is required!"],
       unique: true,
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     password: {
       type: String,
       required: ["Password is required!"],
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     role: {
       type: [String],
       enum: ["Student", "Teacher", "Admin", "Manager"],
-      default: ["Student"]
+      default: [],
+      // default: ["Student"]
     },
     isAdmin: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isVerified: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
 
     // courses: [
     //   {
@@ -53,7 +54,7 @@ const userSchema = new Schema(
     // ]
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
@@ -82,7 +83,7 @@ function validateUserInput(firstName, lastName, email, password) {
 
 // Define the signup method as a static method on the userSchema
 
-userSchema.statics.signup = async function(
+userSchema.statics.signup = async function (
   firstName,
   lastName,
   email,
@@ -104,7 +105,7 @@ userSchema.statics.signup = async function(
       firstName,
       lastName,
       email,
-      password: hash
+      password: hash,
     });
     console.log(user);
     return user;
@@ -115,7 +116,7 @@ userSchema.statics.signup = async function(
 };
 
 // static login method
-userSchema.statics.login = async function(email, password) {
+userSchema.statics.login = async function (email, password) {
   if (!email || !password) {
     throw Error("Email and password are required!!");
   }
