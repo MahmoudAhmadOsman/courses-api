@@ -27,6 +27,13 @@ const CourseList = () => {
   return (
     <div className="courses-list">
       <div className="container">
+    <div className="col">
+						{" "}
+						<div className="alert alert-warning mt-3">
+							{courses.length > 0}
+							<h4 className="text-center">No courses found!</h4>
+						</div>
+					</div>
         <div className="row">
           <div className="col">
             {loading && <p>{<Loading />}</p>}
