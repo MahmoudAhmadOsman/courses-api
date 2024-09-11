@@ -12,7 +12,7 @@ https://courses-api-j67q.onrender.com/api/courses/list
 
 ### Get All Courses
 
-- **URL:** `https://courses-api-j67q.onrender.com/api/courses/list`
+- **URL:** `/api/courses/list`
 - **Method:** `GET`
 - **Description:** Retrieves a list of all courses.
 - **Response Example:**
@@ -45,7 +45,7 @@ https://courses-api-j67q.onrender.com/api/courses/list
 
 ### Get Course by ID
 
-- **URL:** `https://courses-api-j67q.onrender.com/api/courses/list/:id`
+- **URL:** `/api/courses/list/:id`
 - **Method:** `GET`
 - **Description:** Retrieves a single course by its ID.
 - **Response Example:**
@@ -65,7 +65,7 @@ https://courses-api-j67q.onrender.com/api/courses/list
 
 ### Create a New Course
 
-- **URL:** `https://courses-api-j67q.onrender.com/api/courses/create`
+- **URL:** `/api/courses/create`
 - **Method:** `POST`
 - **Description:** Creates a new course.
 - **Request Body Example:**
