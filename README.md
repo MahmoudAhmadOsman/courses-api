@@ -100,7 +100,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 
 ### Update a Course
 
-- **URL:** `https://courses-api-j67q.onrender.com/api/courses/list/update/:id`
+- **URL:** `/api/courses/list/update/:id`
 - **Method:** `PUT`
 - **Description:** Updates an existing course by its ID.
 - **Request Body Example:**
@@ -129,7 +129,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 
 ### Delete a Course
 
-- **URL:** `https://courses-api-j67q.onrender.com/api/courses/delete/:id`
+- **URL:** `/api/courses/delete/:id`
 - **Method:** `DELETE`
 - **Description:** Deletes a course by its ID.
 - **Response Example:**
@@ -158,7 +158,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
    ```
 
 4. **Access the API:**
-   Open your browser or use a tool like Postman to navigate to `https://courses-api-j67q.onrender.com/api/courses/list`.
+   Open your browser or use a tool like Postman to navigate to `/api/courses/list`.
 
 ## License
 
