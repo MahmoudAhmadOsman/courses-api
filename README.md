@@ -45,7 +45,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 
 ### Get Course by ID
 
-- **URL:** `/api/courses/list/:id`
+- **URL:** `/api/courses/list/id`
 - **Method:** `GET`
 - **Description:** Retrieves a single course by its ID.
 - **Response Example:**
@@ -100,7 +100,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 
 ### Update a Course
 
-- **URL:** `/api/courses/list/update/:id`
+- **URL:** `/api/courses/list/update/id`
 - **Method:** `PUT`
 - **Description:** Updates an existing course by its ID.
 - **Request Body Example:**
@@ -129,7 +129,7 @@ This project is a RESTful API that demonstrates all CRUD (Create, Read, Update, 
 
 ### Delete a Course
 
-- **URL:** `/api/courses/delete/:id`
+- **URL:** `/api/courses/delete/id`
 - **Method:** `DELETE`
 - **Description:** Deletes a course by its ID.
 - **Response Example:**
